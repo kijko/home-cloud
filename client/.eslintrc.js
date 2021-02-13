@@ -2,10 +2,14 @@ module.exports = {
     "env": {
         "browser": true
     },
-    "plugins": [ "react" ],
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended"
+    "plugins": [
+        "react",
+        "@typescript-eslint",
     ],
-    "parser": "babel-eslint"
+    "extends": [
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+    ],
+    "parser": "@typescript-eslint/parser",
 };

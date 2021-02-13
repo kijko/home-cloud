@@ -3,27 +3,28 @@ const DevServerConfig = require("./webpack-dev-server.config");
 
 module.exports = {
     "mode": "development",
-    "entry": "./src/index.js",
+    "entry": "./src/index.tsx",
     "output": {
         "path": __dirname + '/dist',
         "filename": "bundle.js"
     },
-    "devtool": "source-map",
+    // "devtool": "source-map",
     "module": {
         "rules": [
             {
-                "enforce": "pre",
-                "test": /\.js$/,
-                "exclude": /node_modules/,
-                "loader": "eslint-loader",
-                "options": {
-                    "emitWarning": true,
-                    "failOnError": false,
-                    "failOnWarning": false
-                }
+                test: /\.ts(x?)$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                    },
+                    {
+                        loader: 'ts-loader'
+                    }
+                ]
             },
             {
-                "test": /\.(js|jsx)$/,
+                "test": /\.js$/,
                 "exclude": /node_modules/,
                 "use": {
                     "loader": "babel-loader"
@@ -45,6 +46,9 @@ module.exports = {
                 ]
             }
         ]
+    },
+    resolve: {
+        extensions: ['*', '.js', '.jsx', '.tsx', '.ts'],
     },
     "plugins": [
         new HtmlWebPackPlugin({
