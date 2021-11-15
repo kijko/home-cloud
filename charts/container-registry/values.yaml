@@ -9,7 +9,7 @@ docker-registry:
     storageClass: manual
   service:
     type: NodePort
-    nodePort: 5000
+    nodePort: 30000
   secrets:
     htpasswd: ~
 
