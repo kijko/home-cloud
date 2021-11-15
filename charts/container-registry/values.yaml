@@ -1,0 +1,18 @@
+
+docker-registry:
+  image:
+    tag: "2.7.1"
+  persistence:
+    enabled: true
+    deleteEnabled: true
+    size: 1Gi
+    storageClass: manual
+  service:
+    type: NodePort
+    nodePort: 5000
+  secrets:
+    htpasswd: ~
+
+pv:
+  size: 1Gi
+  hostPath: "/var/lib/k8-cluster-data/docker-registry"
