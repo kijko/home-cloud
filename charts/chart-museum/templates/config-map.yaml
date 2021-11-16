@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  PORT: {{ .Values.appPort }}
+  DEBUG: {{ .Values.env.debug }}
+  STORAGE: {{ .Values.env.storage }}
+  STORAGE_LOCAL_ROOTDIR: {{ .Values.env.storageRootDir }}

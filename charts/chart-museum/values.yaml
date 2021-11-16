@@ -1,0 +1,8 @@
+replicaCount: 1
+
+image:
+  tag: chartmuseum/chartmuseum:latest
+  pullPolicy: IfNotPresent
+
+appPort: 8080
+nodePort: 30001
