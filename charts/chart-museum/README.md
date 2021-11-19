@@ -7,3 +7,9 @@ helm install \
 chart-museum \
 $CHART_DIR
 ```
+
+## Pushing hard
+Use plugin:
+```shell
+helm plugin install https://github.com/chartmuseum/helm-push.git
+```
