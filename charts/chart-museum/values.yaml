@@ -6,3 +6,19 @@ image:
 
 appPort: 8080
 nodePort: 30001
+
+namespace: chart-museum
+
+persistence:
+  storage: 1Gi
+  accessMode: ReadWriteOnce
+  hostPath: "/var/lib/k8-cluster-data/chart-museum"
+
+env:
+  debug: "1"
+  storage: local
+  storageRootDir: /var/charts
+  auth:
+    user: ~
+    password: ~
+

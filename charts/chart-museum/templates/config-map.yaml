@@ -7,3 +7,5 @@ data:
   DEBUG: {{ .Values.env.debug }}
   STORAGE: {{ .Values.env.storage }}
   STORAGE_LOCAL_ROOTDIR: {{ .Values.env.storageRootDir }}
+  BASIC_AUTH_USER: {{ .Values.env.auth.user }}
+  BASIC_AUTH_PASS: {{ .Values.env.auth.password }}
