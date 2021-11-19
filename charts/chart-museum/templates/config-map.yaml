@@ -3,8 +3,8 @@ kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-configmap
 data:
-  PORT: {{ .Values.appPort }}
-  DEBUG: {{ .Values.env.debug }}
+  PORT: {{ .Values.appPort | quote }}
+  DEBUG: {{ .Values.env.debug | quote }}
   STORAGE: {{ .Values.env.storage }}
   STORAGE_LOCAL_ROOTDIR: {{ .Values.env.storageRootDir }}
   BASIC_AUTH_USER: {{ .Values.env.auth.user }}

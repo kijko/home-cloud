@@ -15,7 +15,7 @@ persistence:
   hostPath: "/var/lib/k8-cluster-data/chart-museum"
 
 env:
-  debug: "1"
+  debug: 1
   storage: local
   storageRootDir: /var/charts
   auth:
