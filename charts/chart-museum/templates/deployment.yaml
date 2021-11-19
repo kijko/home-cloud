@@ -22,7 +22,7 @@ spec:
                 name: {{ .Release.Name }}-configmap
           volumeMounts:
               - mountPath: "/var/charts"
-                name: mypd
+                name: chart-storage
       volumes:
         - name: chart-storage
           persistentVolumeClaim:
