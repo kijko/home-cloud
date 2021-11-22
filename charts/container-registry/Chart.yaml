@@ -4,9 +4,7 @@ description: home cloud docker container registry
 
 type: application
 
-version: 1.0.0
-
-appVersion: "1.0.0"
+version: 1.0.1
 
 dependencies:
   - name: docker-registry

@@ -12,6 +12,9 @@ docker-registry:
     nodePort: 30000
   secrets:
     htpasswd: ~
+  securityContext:
+#    todo fix run as non root
+    runAsUser: 0
 
 pv:
   size: 1Gi
